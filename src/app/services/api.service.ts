@@ -22,7 +22,7 @@ export class ApiService {
         listaPokemon.push(dadosPokemon);
       });
     });
-    console.log(listaPokemon);
+    console.log(listaPokemon):
   }
 
   buscarDadosPokemon(url: string){
