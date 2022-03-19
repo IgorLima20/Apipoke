@@ -10,20 +10,30 @@ export class HomePage implements OnInit {
 
   urlImg = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
 
-  listaPokemon = [
-    {numero: 1, nome: 'bulbasaur', tipos: ['grass', 'poison'], foto: '001.png' },
-    {numero: 4, nome: 'charmander', tipos: ['fire'], foto: '004.png' },
-    {numero: 7, nome: 'squirtle', tipos: ['water'], foto: '007.png' },
-    {numero: 25, nome: 'pikachu', tipos: ['eletric'], foto: '025.png' },
-    {numero: 149, nome: 'dragonite', tipos: ['dragon', 'flying'], foto: '149.png' }
+  listaPokemon = [];
 
-  ];
+  count: number = 0;
+  next: string = '';
+  previous: string = '';
 
   constructor(public apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.buscarListaPokemon(this.apiService.urlApi);
-
+    this.buscarPokemon(this.apiService.urlApi);
   }
 
+  buscarPokemon(url: string){
+    this.listaPokemon = [];
+    this.apiService.buscarListaPokemon(url).subscribe(retorno => {
+      this.count = retorno['count'];
+      this.next = retorno['next'];
+      this.previous = retorno['previous'];
+
+      retorno['results'].forEach(pokemon => {
+        this.apiService.buscarDadosPokemon(pokemon['url']).subscribe(dadosPokemon => {
+          this.listaPokemon.push(dadosPokemon);
+        })
+      })
+    });
+  }
 }

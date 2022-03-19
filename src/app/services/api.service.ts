@@ -12,22 +12,10 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   buscarListaPokemon(url: string) {
-    const listaPokemon = [];
-
-    this.http.get(url).subscribe(dadosRetorno => {
-      dadosRetorno['results'].forEach(cadaPokemon => {
-
-        const dadosPokemon = this.buscarDadosPokemon(cadaPokemon['url']);
-
-        listaPokemon.push(dadosPokemon);
-      });
-    });
-    console.log(listaPokemon):
+    return this.http.get(url);
   }
 
   buscarDadosPokemon(url: string){
-    return this.http.get(url).subscribe(dadosPokemon => {
-      return dadosPokemon;
-    });
+    return this.http.get(url);
   }
 }
