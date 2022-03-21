@@ -29,7 +29,8 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    
+    <ion-buttons *ngIf="previous != null" slot="start">
       <ion-button (click)="buscarPokemon(previous)">
         <ion-icon slot="icon-only" name="return-down-back-outline"></ion-icon>
       </ion-button>
@@ -37,7 +38,7 @@
 
     <ion-title class="ion-text-center">{{count}}</ion-title>
 
-    <ion-buttons slot="end">
+    <ion-buttons *ngIf="next != null" slot="end">
       <ion-button (click)="buscarPokemon(next)">
         <ion-icon slot="icon-only" name="return-down-forward-outline"></ion-icon>
       </ion-button>
