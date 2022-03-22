@@ -16,6 +16,10 @@ export class HomePage implements OnInit {
   next: string = '';
   previous: string = '';
 
+  max_pag_b: number = 0;
+  max_pag: number = 0;
+  cur_pag: number = 1;
+
   constructor(public apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -26,8 +30,11 @@ export class HomePage implements OnInit {
     this.listaPokemon = [];
     this.apiService.buscarListaPokemon(url).subscribe(retorno => {
       this.count = retorno['count'];
+      this.max_pag_b = this.count/20+1;
+      this.max_pag = Number(this.max_pag_b.toFixed(0));
       this.next = retorno['next'];
       this.previous = retorno['previous'];
+      console.log(this.previous,this.next);
 
       retorno['results'].forEach(pokemon => {
         this.apiService.buscarDadosPokemon(pokemon['url']).subscribe(dadosPokemon => {
@@ -35,5 +42,13 @@ export class HomePage implements OnInit {
         })
       })
     });
+  }
+
+  page(pg: string) {
+    if (pg = 'mais') {
+      this.cur_pag += 1;
+    } else {
+      this.cur_pag -= 1;
+    }
   }
 }
