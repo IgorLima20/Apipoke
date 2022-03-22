@@ -45,10 +45,11 @@ export class HomePage implements OnInit {
   }
 
   page(pg: string) {
-    if (pg = 'mais') {
+    if (pg == 'mais') {
       this.cur_pag += 1;
     } else {
       this.cur_pag -= 1;
     }
+    console.log(pg);
   }
 }

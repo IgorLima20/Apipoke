@@ -31,15 +31,15 @@
   <ion-toolbar>
     
     <ion-buttons *ngIf="previous != null" slot="start">
-      <ion-button (click)="buscarPokemon(previous);page(menos)">
+      <ion-button (click)="buscarPokemon(previous);page('menos')">
         <ion-icon slot="icon-only" name="return-down-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
     <ion-title class="ion-text-center">{{cur_pag + "/" + max_pag}}</ion-title>
 
-    <ion-buttons *ngIf="next != null" slot="end">
-      <ion-button (click)="buscarPokemon(next);page(mais)">
+    <ion-buttons *ngIf="cur_pag != max_pag" slot="end">
+      <ion-button (click)="buscarPokemon(next);page('mais')">
         <ion-icon slot="icon-only" name="return-down-forward-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
