@@ -46,7 +46,9 @@ export class HomePage implements OnInit {
 
   page(pg: string) {
     if (pg == 'mais') {
-      this.cur_pag += 1;
+      if (this.cur_pag != this.max_pag) {
+        this.cur_pag += 1;
+      }
     } else {
       this.cur_pag -= 1;
     }
