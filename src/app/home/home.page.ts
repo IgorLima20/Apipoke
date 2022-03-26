@@ -18,7 +18,8 @@ export class HomePage implements OnInit {
 
   max_pag_b: number = 0;
   max_pag: number = 0;
-  cur_pag: number = 1;
+  cur_pag: number = 1
+  listaFiltrada = [];
 
   constructor(public apiService: ApiService) {}
 
@@ -39,6 +40,7 @@ export class HomePage implements OnInit {
       retorno['results'].forEach(pokemon => {
         this.apiService.buscarDadosPokemon(pokemon['url']).subscribe(dadosPokemon => {
           this.listaPokemon.push(dadosPokemon);
+          this.ordenarLista();
         })
       })
     });
@@ -53,5 +55,18 @@ export class HomePage implements OnInit {
       this.cur_pag -= 1;
     }
     console.log(pg);
+  }
+
+  public ordenarLista() {
+    this.listaPokemon.sort(function (a, b) {
+      if (a.id > b.id) {
+        return 1;
+      }
+      if (a.id < b.id) {
+        return -1;
+      }
+      return 0;
+    });
+    this.listaFiltrada = this.listaPokemon;
   }
 }

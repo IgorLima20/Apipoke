@@ -51,6 +51,14 @@
   --ion-color-danger-shade: #cf3c4f;
   --ion-color-danger-tint: #ed576b;
 
+  /** vermelho **/
+  --ion-color-vermelho: #E3350D;
+	--ion-color-vermelho-rgb: 227,53,13;
+	--ion-color-vermelho-contrast: #ffffff;
+	--ion-color-vermelho-contrast-rgb: 255,255,255;
+	--ion-color-vermelho-shade: #c82f0b;
+	--ion-color-vermelho-tint: #e64925;
+
   /** dark **/
   --ion-color-dark: #222428;
   --ion-color-dark-rgb: 34, 36, 40;
@@ -84,13 +92,13 @@
 	--ion-color-fire-shade: #df6e20;
 	--ion-color-fire-tint: #fd8a3a;
 
-  /** eletric **/
-  --ion-color-eletric: #eed535;
-	--ion-color-eletric-rgb: 238,213,53;
-	--ion-color-eletric-contrast: #000000;
-	--ion-color-eletric-contrast-rgb: 0,0,0;
-	--ion-color-eletric-shade: #d1bb2f;
-	--ion-color-eletric-tint: #f0d949;
+  /** electric **/
+  --ion-color-electric: #eed535;
+	--ion-color-electric-rgb: 238,213,53;
+	--ion-color-electric-contrast: #000000;
+	--ion-color-electric-contrast-rgb: 0,0,0;
+	--ion-color-electric-shade: #d1bb2f;
+	--ion-color-electric-tint: #f0d949;
 
   /** poison **/
   --ion-color-poison: #b97fc9;
@@ -231,13 +239,13 @@
 
 }
 
-.ion-color-eletric {
-	--ion-color-base: var(--ion-color-eletric);
-	--ion-color-base-rgb: var(--ion-color-eletric-rgb);
-	--ion-color-contrast: var(--ion-color-eletric-contrast);
-	--ion-color-contrast-rgb: var(--ion-color-eletric-contrast-rgb);
-	--ion-color-shade: var(--ion-color-eletric-shade);
-	--ion-color-tint: var(--ion-color-eletric-tint);
+.ion-color-electric {
+	--ion-color-base: var(--ion-color-electric);
+	--ion-color-base-rgb: var(--ion-color-electric-rgb);
+	--ion-color-contrast: var(--ion-color-electric-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-electric-contrast-rgb);
+	--ion-color-shade: var(--ion-color-electric-shade);
+	--ion-color-tint: var(--ion-color-electric-tint);
 }
 
 .ion-color-poison {
@@ -382,4 +390,13 @@
 	--ion-color-contrast-rgb: var(--ion-color-ground-contrast-rgb);
 	--ion-color-shade: var(--ion-color-ground-shade);
 	--ion-color-tint: var(--ion-color-ground-tint);
+}
+
+.ion-color-vermelho {
+	--ion-color-base: var(--ion-color-vermelho);
+	--ion-color-base-rgb: var(--ion-color-vermelho-rgb);
+	--ion-color-contrast: var(--ion-color-vermelho-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-vermelho-contrast-rgb);
+	--ion-color-shade: var(--ion-color-vermelho-shade);
+	--ion-color-tint: var(--ion-color-vermelho-tint);
 }
